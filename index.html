@@ -149,4 +149,10 @@
 </x-dc>
 
 
+<script>
+  /* 常に最上部から表示（スマホの位置記憶・URLの#による途中スクロールを防ぐ） */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  window.addEventListener('load', function () { window.scrollTo(0, 0); });
+</script>
 </body></html>
